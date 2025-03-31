@@ -1,6 +1,7 @@
 ---@class RunnerConfig
 ---@field direction "float"|"horizontal"|"vertical"|"tab" Direction for the terminal window
 ---@field close_on_exit boolean Whether to close the terminal when the command exits
+---@field timeout number|nil Auto-close terminal after this many milliseconds (nil to disable)
 ---@field size number|function Size of the terminal window
 ---@field keymaps RunnerKeymaps Keymap configuration
 ---@field palette RunnerPaletteConfig Command palette configuration

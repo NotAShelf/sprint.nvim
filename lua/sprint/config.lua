@@ -5,6 +5,7 @@ local M = {}
 M.default_options = {
   direction = "float",
   close_on_exit = true,
+  timeout = nil,
   size = function(term)
     if term.direction == "horizontal" then
       return 15
