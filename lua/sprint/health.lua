@@ -18,10 +18,10 @@ function M.check()
   start("Sprint")
 
   -- Check for Neovim version
-  if vim.fn.has('nvim-0.7.0') == 1 then
-    ok("Neovim version >= 0.7.0")
+  if vim.fn.has('nvim-0.10.0') == 1 then
+    ok("Neovim version >= 0.10.0")
   else
-    error("Neovim version must be >= 0.7.0")
+    error("Neovim version must be >= 0.10.0")
   end
 
   -- Check for dependencies
