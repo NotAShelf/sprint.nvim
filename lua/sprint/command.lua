@@ -18,11 +18,14 @@ function M.run(cmd)
   M.last_command = cmd
 
   -- Check if toggleterm is available
-  local ok, toggleterm = pcall(require, "toggleterm")
+  local ok, _ = pcall(require, "toggleterm")
   if not ok then
     vim.notify("toggleterm.nvim is required but not found", vim.log.levels.ERROR)
     return false
   end
+
+  -- Get Terminal constructor from the correct module
+  local Terminal = require("toggleterm.terminal").Terminal
 
   -- Create and open terminal with command
   local cfg = config.get()
@@ -44,7 +47,7 @@ function M.run(cmd)
     terminal_config.float_opts = cfg.float_opts
   end
 
-  local term = toggleterm.Terminal:new(terminal_config)
+  local term = Terminal:new(terminal_config)
   term:toggle()
 
   return true
